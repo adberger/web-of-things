@@ -1,2 +1,2 @@
-#shared/**
-#!shared/addons/ttn-adapter-v3/.gitkeep
+shared/**
+!shared/addons/ttn-adapter-v3/.gitkeep
