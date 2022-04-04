@@ -1,0 +1,13 @@
+version: '3.6'
+
+services:
+  webthings-gateway:
+    image: webthingsio/gateway:latest
+#    networks:
+#      - host
+    environment:
+      - TZ=Europe/Zurich
+    volumes:
+      - ./shared:/home/node/.webthings
+    ports:
+      - "8080:8080"

@@ -1,0 +1,6 @@
+node_modules/
+lib
+
+.sha256sum
+*.tgz
+*.tgz.sha256sum
