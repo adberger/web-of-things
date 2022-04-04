@@ -1,4 +1,0 @@
-shared/*
-!shared/addons/ttn-adapter-v3
-shared/addons/ttn-adapter-v3/*
-!shared/addons/ttn-adapter-v3/.gitkeep
