@@ -1,9 +1,11 @@
 # Web of Things for BTI4105 - DSIOT Systems
 
 ## Basic idea
+
 Implement a Web of Things gateway to connect multiple protocols (LoRa, ZigBee, ...) with each other. 
 
 ## Project structure
+
 | Directory               | Description                                                                                                              |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | `ttn-adapter`           | A fork from the [`ttn-adapter`](https://github.com/tim-hellhake/ttn-adapter) with added support for TheThingsNetwork V3. |
@@ -11,8 +13,12 @@ Implement a Web of Things gateway to connect multiple protocols (LoRa, ZigBee, .
 | `wot-thing-esp32-dht11` | Platform.IO project to use an esp32 and dht11 sensor and push data to TheThingsNetwork                                   |
 
 ## Configuration
+
 ### Configure ESP32 for TheThingsNetwork
-Create a new file `wot-thing-esp32-dht11\config\AppConfig.h` and add the following content.
+
+1. Patch the following library file: `wot-thing-esp32-dht11\.pio\libdeps\...\MCCI LoRaWAN LMIC library\project_config\lmic_project_config.h` to comment out `CFG_us915` and comment in `CFG_eu868`
+
+2. Create a new file `wot-thing-esp32-dht11\config\AppConfig.h` and add the following content.
 
 ```c
 #ifndef __APP_CONFIG_H__
@@ -33,7 +39,9 @@ Create a new file `wot-thing-esp32-dht11\config\AppConfig.h` and add the followi
 Replace the `FILL ME` placeholders with the values retrieved from the TheThingsNetwork console. 
 
 ## Local development
+
 ### Develop `ttn-adapter`
+
 - Install dependencies using `npm install`
 - Implement the changes in the `ttn-adapter` directory
 - Build the project using `npm run build`
@@ -42,6 +50,7 @@ Replace the `FILL ME` placeholders with the values retrieved from the TheThingsN
 - Restart the WebThings Gateway Docker container
 
 ### Start WebThings Gateway
+
 - Run `docker-compose up -d` in the `wot-gateway` directory
 
 After changes the WebThings Gateway needs to be restarted.

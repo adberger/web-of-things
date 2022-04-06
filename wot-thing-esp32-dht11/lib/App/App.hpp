@@ -17,6 +17,10 @@
 #define OLED_SDA  SDA_OLED
 #define OLED_SCL  SCL_OLED
 #define OLED_RST  RST_OLED
+
+#define DHT_PIN   14
+#define DHT_TYPE  DHT11
+
 #endif
 
 #ifdef TTGO_LORA32_V21
